@@ -20,7 +20,7 @@ const Register = () => {
   });
   const [loading, setLoading] = useState(false);
   const { register } = useAuth();
-  const navigate = navigate();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
