@@ -63,4 +63,4 @@ def require_role(required_roles: list):
                 detail="Insufficient permissions"
             )
         return current_user
-    return Depends(role_checker)
+    return role_checker
