@@ -90,7 +90,7 @@ def send_approval_notification(nfa_id: str, approver_email: str, approver_name: 
             </tr>
         </table>
         <p style="margin-top: 20px;">
-            <a href="https://docuauto.preview.emergentagent.com/approvals/{nfa_id}" 
+            <a href="https://approval-flow-33.preview.emergentagent.com/approvals/{nfa_id}" 
                style="background-color: #4CAF50; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px;">
                 Review & Approve
             </a>
@@ -125,7 +125,7 @@ def send_coordinator_notification(nfa_id: str, coordinator_email: str):
         <p>Section 1 approvals are complete for NFA: <strong>{nfa_id}</strong></p>
         <p>Please proceed with vendor selection and Section 2 processing.</p>
         <p style="margin-top: 20px;">
-            <a href="https://docuauto.preview.emergentagent.com/coordinator/{nfa_id}" 
+            <a href="https://approval-flow-33.preview.emergentagent.com/coordinator/{nfa_id}" 
                style="background-color: #2196F3; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px;">
                 Process Section 2
             </a>
