@@ -8,6 +8,7 @@ import Dashboard from './pages/Dashboard';
 import CreateNFA from './pages/CreateNFA';
 import NFADetails from './pages/NFADetails';
 import Approvals from './pages/Approvals';
+import MyNFAs from './pages/MyNFAs';
 import './index.css';
 
 const ProtectedRoute = ({ children }) => {
@@ -32,6 +33,7 @@ function AppRoutes() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+          <Route path="/my-nfas" element={<ProtectedRoute><MyNFAs /></ProtectedRoute>} />
           <Route path="/nfa/create" element={<ProtectedRoute><CreateNFA /></ProtectedRoute>} />
           <Route path="/nfa/:id" element={<ProtectedRoute><NFADetails /></ProtectedRoute>} />
           <Route path="/approvals" element={<ProtectedRoute><Approvals /></ProtectedRoute>} />
