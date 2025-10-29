@@ -54,8 +54,8 @@ async def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(s
     
     return payload
 
-async def require_role(required_roles: list):
-    async def role_checker(current_user: Dict = Depends(get_current_user)):
+def require_role(required_roles: list):
+    def role_checker(current_user: Dict = Depends(get_current_user)):
         user_roles = current_user.get("roles", [])
         if not any(role in user_roles for role in required_roles):
             raise HTTPException(
@@ -63,4 +63,4 @@ async def require_role(required_roles: list):
                 detail="Insufficient permissions"
             )
         return current_user
-    return role_checker
+    return Depends(role_checker)
