@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 from pathlib import Path
 
 # Import routers
-from api.routes import auth, users, nfa, approvals, vendors, reports, admin, websocket
+from api.routes import auth, users, nfa, approvals, vendors, reports, admin, websocket, notifications
 from core.database import init_db, close_db
 from core.config import settings
 
