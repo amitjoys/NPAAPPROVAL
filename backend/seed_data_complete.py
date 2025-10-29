@@ -48,7 +48,7 @@ async def seed_database():
             "username": "superadmin",
             "email": "admin@hcil.com",
             "name": "Super Admin",
-            "hashed_password": hash_password("Admin@123"),
+            "password_hash": hash_password("Admin@123"),
             "designation": "System Administrator",
             "department": "IT",
             "location": "Head Office - Delhi",
