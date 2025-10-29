@@ -25,6 +25,10 @@ async def get_dashboard_stats(
     
     # Requestor stats
     if UserRole.REQUESTOR.value in roles or UserRole.SUPERADMIN.value in roles:
+        # Get current month start date
+        from datetime import datetime
+        start_of_month = datetime.now(timezone.utc).replace(day=1, hour=0, minute=0, second=0, microsecond=0).isoformat()
+        
         total_nfas = await db.nfa_requests.count_documents({"requestor_id": user_id})
         pending_nfas = await db.nfa_requests.count_documents({
             "requestor_id": user_id,
@@ -34,11 +38,16 @@ async def get_dashboard_stats(
             "requestor_id": user_id,
             "status": NFAStatus.APPROVED.value
         })
+        this_month_nfas = await db.nfa_requests.count_documents({
+            "requestor_id": user_id,
+            "created_at": {"$gte": start_of_month}
+        })
         
         stats["requestor"] = {
             "total": total_nfas,
             "pending": pending_nfas,
-            "approved": approved_nfas
+            "approved": approved_nfas,
+            "this_month": this_month_nfas
         }
     
     # Approver stats
