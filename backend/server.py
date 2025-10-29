@@ -55,6 +55,7 @@ app.include_router(approvals.router, prefix="/api/approvals", tags=["Approvals"]
 app.include_router(vendors.router, prefix="/api/vendors", tags=["Vendors"])
 app.include_router(reports.router, prefix="/api/reports", tags=["Reports"])
 app.include_router(admin.router, prefix="/api/admin", tags=["Admin"])
+app.include_router(notifications.router, prefix="/api/notifications", tags=["Notifications"])
 app.include_router(websocket.router, prefix="/api/ws", tags=["WebSocket"])
 
 @app.get("/api/health")
