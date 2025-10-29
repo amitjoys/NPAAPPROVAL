@@ -27,7 +27,7 @@ class PDFService:
             </div>
             """
         
-        section2_sigs = """
+        section2_sigs = ""
         for approval in section2_approvals:
             section2_sigs += f"""
             <div class="signature-box">
